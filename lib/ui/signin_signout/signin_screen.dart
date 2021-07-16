@@ -1,11 +1,12 @@
 import 'package:awesome_chat/colors.dart';
 import 'package:awesome_chat/components/primary_button.dart';
+import 'package:awesome_chat/ui/home/home.dart';
 import 'package:awesome_chat/ui/signin_signout/register_screen.dart';
 import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
+import 'package:get/get.dart';
 import 'components/form_input.dart';
 
 class SigninScreen extends StatelessWidget {
@@ -68,7 +69,12 @@ class SigninScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 47),
-                PrimaryButton(text: "ĐĂNG NHẬP", press: () {}),
+                PrimaryButton(
+                  text: "ĐĂNG NHẬP",
+                  press: () {
+                    Get.to(() => HomeScreen());
+                  },
+                ),
                 SizedBox(height: 123),
                 GestureDetector(
                   onTap: () {
@@ -88,9 +94,8 @@ class SigninScreen extends StatelessWidget {
                           return SlideTransition(
                             child: child,
                             position: Tween<Offset>(
-                              begin: Offset(1, 0),
-                              end: Offset.zero
-                            ).animate(animation),
+                                    begin: Offset(1, 0), end: Offset.zero)
+                                .animate(animation),
                           );
                         },
                         pageBuilder: (context, animation, secondaryAnimation) =>

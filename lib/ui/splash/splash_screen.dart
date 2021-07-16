@@ -2,14 +2,16 @@ import 'package:awesome_chat/colors.dart';
 import 'package:awesome_chat/ui/signin_signout/signin_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Future.delayed(Duration(seconds: 3), () {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => SigninScreen()));
+    Future.delayed(Duration(seconds: 1), () {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => SigninScreen()));
     });
 
     return Scaffold(
@@ -18,9 +20,10 @@ class SplashScreen extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [color_4356B4, color_3DCFCF]),
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [color_4356B4, color_3DCFCF],
+          ),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

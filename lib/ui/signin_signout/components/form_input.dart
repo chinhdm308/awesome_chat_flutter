@@ -20,6 +20,9 @@ class InputCommon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    TextEditingController a = new TextEditingController();
+
     return Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

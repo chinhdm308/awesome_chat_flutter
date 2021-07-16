@@ -88,6 +88,7 @@ class ChatsScreen extends StatelessWidget {
               child: Container(
                 color: Colors.white,
                 child: ListView.builder(
+                  padding: EdgeInsets.zero,
                   itemCount: chatsData.length,
                   itemBuilder: (context, index) => ChatCard(
                     chat: chatsData[index],

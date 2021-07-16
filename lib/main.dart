@@ -2,22 +2,25 @@ import 'package:awesome_chat/ui/home/home.dart';
 import 'package:awesome_chat/ui/signin_signout/signin_screen.dart';
 import 'package:awesome_chat/ui/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-void main() {
-  runApp(MyApp());
+void main() => runApp(MyApp());
+
+class ABC {
+  int count = 0;
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Awesome Chat',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: SplashScreen(),
     );
   }
 }

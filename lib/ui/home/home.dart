@@ -1,15 +1,19 @@
 import 'package:awesome_chat/ui/chats/chats_screen.dart';
 import 'package:awesome_chat/ui/friends/friends_screen.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:awesome_chat/ui/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../../colors.dart';
 
+class ABC {
+  int count = 0;
+}
+
 class HomeScreen extends StatelessWidget {
   var index = 0.obs;
-
+  var cc = Get.put(ABC());
   Widget navigateScreen(index) {
     switch (index) {
       case 0:
@@ -17,7 +21,7 @@ class HomeScreen extends StatelessWidget {
       case 1:
         return FriendsScreen();
       case 2:
-        return FriendsScreen();
+        return ProfileScreen();
       default:
         return Container();
     }
