@@ -1,5 +1,5 @@
 import 'package:awesome_chat/colors.dart';
-import 'package:awesome_chat/ui/signin_signout/signin_screen.dart';
+import 'package:awesome_chat/ui/signin_signup/signin_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';

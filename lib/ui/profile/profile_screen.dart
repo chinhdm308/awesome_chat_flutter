@@ -1,8 +1,10 @@
+import 'package:awesome_chat/ui/edit_profile/edit_profile_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../colors.dart';
 import 'components/cart_profile.dart';
+import 'package:get/get.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -76,7 +78,9 @@ class ProfileScreen extends StatelessWidget {
                               ),
                             ),
                             InkResponse(
-                              onTap: () {},
+                              onTap: () {
+                                Get.to(() => EditProfileScreen());
+                              },
                               child: Padding(
                                 padding: const EdgeInsets.only(right: 12),
                                 child: SvgPicture.asset(

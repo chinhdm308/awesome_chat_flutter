@@ -1,0 +1,84 @@
+{
+  "project_info": {
+    "project_number": "83850698952",
+    "project_id": "mvvmchatapp",
+    "storage_bucket": "mvvmchatapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:83850698952:android:acc80c1f7a176a2c7545fd",
+        "android_client_info": {
+          "package_name": "com.example.awesome_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "83850698952-oq09f1s7plin4bbseiajrrgfm4vr0q3e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.awesome_chat",
+            "certificate_hash": "e31e667fb8e4b6a45d2404e6d6ea28592d98def1"
+          }
+        },
+        {
+          "client_id": "105747588194271798659",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoLeSeO8hNwWSqKhE9p0Sqo_6eiWyAuqo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "105747588194271798659",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:83850698952:android:cb1c24cdd29ea43e7545fd",
+        "android_client_info": {
+          "package_name": "edu.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "83850698952-vlm2jfmfri1rs6mfamu31keijkqu4gj4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.chatapp",
+            "certificate_hash": "e31e667fb8e4b6a45d2404e6d6ea28592d98def1"
+          }
+        },
+        {
+          "client_id": "105747588194271798659",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoLeSeO8hNwWSqKhE9p0Sqo_6eiWyAuqo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "105747588194271798659",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
