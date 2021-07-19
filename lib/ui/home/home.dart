@@ -7,13 +7,8 @@ import 'package:get/get.dart';
 
 import '../../colors.dart';
 
-class ABC {
-  int count = 0;
-}
-
 class HomeScreen extends StatelessWidget {
   var index = 0.obs;
-  var cc = Get.put(ABC());
   Widget navigateScreen(index) {
     switch (index) {
       case 0:

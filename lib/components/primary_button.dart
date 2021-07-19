@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import '../colors.dart';
 
 class PrimaryButton extends StatelessWidget {
-  const PrimaryButton(
-      {Key? key,
-      required this.text,
-      required this.press,
-      this.color = color_4356B4,
-      this.padding = const EdgeInsets.only(top: 16, bottom: 17),
-      this.isActive = false})
-      : super(key: key);
+  const PrimaryButton({
+    Key? key,
+    required this.text,
+    required this.press,
+    this.color = color_4356B4,
+    this.padding = const EdgeInsets.only(top: 16, bottom: 17),
+    this.isActive = false,
+  }) : super(key: key);
 
   final String text;
   final VoidCallback press;

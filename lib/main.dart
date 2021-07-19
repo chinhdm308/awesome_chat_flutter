@@ -6,10 +6,6 @@ import 'package:get/get.dart';
 
 void main() => runApp(MyApp());
 
-class ABC {
-  int count = 0;
-}
-
 class MyApp extends StatelessWidget {
 
   @override

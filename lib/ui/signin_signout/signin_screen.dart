@@ -1,7 +1,9 @@
 import 'package:awesome_chat/colors.dart';
 import 'package:awesome_chat/components/primary_button.dart';
+import 'package:awesome_chat/constants.dart';
 import 'package:awesome_chat/ui/home/home.dart';
 import 'package:awesome_chat/ui/signin_signout/register_screen.dart';
+import 'package:awesome_chat/ui/signin_signout/signin_vewmodel.dart';
 import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -9,13 +11,34 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'components/form_input.dart';
 
-class SigninScreen extends StatelessWidget {
+class SigninScreen extends StatefulWidget {
   const SigninScreen({Key? key}) : super(key: key);
+
+  @override
+  _SigninScreenState createState() => _SigninScreenState();
+}
+
+class _SigninScreenState extends State<SigninScreen> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController pwController = TextEditingController();
+
+  final SigninViewModel viewModel = Get.put(SigninViewModel());
+
+  @override
+  void initState() {
+    super.initState();
+    emailController.addListener(() {
+      viewModel.isValidateEmail(emailController.text, pwController.text);
+    });
+    pwController.addListener(() {
+      viewModel.isValidatePassword(emailController.text, pwController.text);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: color_E5E5E5,
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -46,17 +69,27 @@ class SigninScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 61),
-                InputCommon(
-                  textFieldName: 'EMAIL',
-                  hintText: 'yourname@gmail.com',
-                  iconUri: 'assets/icons/ic_mail.svg',
+                Obx(
+                  () => InputCommon(
+                    textFieldName: 'EMAIL',
+                    hintText: 'yourname@gmail.com',
+                    iconUri: 'assets/icons/ic_mail.svg',
+                    controller: emailController,
+                    errorText: viewModel.errorEmail.value,
+                    type: EMAIL,
+                  ),
                 ),
                 SizedBox(height: 40),
-                InputCommon(
-                  textFieldName: 'PASSWORD',
-                  hintText: '********',
-                  iconUri: 'assets/icons/ic_key.svg',
-                  obscureText: true,
+                Obx(
+                  () => InputCommon(
+                    textFieldName: 'PASSWORD',
+                    hintText: '********',
+                    iconUri: 'assets/icons/ic_key.svg',
+                    obscureText: true,
+                    controller: pwController,
+                    errorText: viewModel.errorPw.value,
+                    type: PASSWORD,
+                  ),
                 ),
                 SizedBox(height: 15),
                 Container(
@@ -69,11 +102,14 @@ class SigninScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 47),
-                PrimaryButton(
-                  text: "ĐĂNG NHẬP",
-                  press: () {
-                    Get.to(() => HomeScreen());
-                  },
+                Obx(
+                  () => PrimaryButton(
+                    text: "ĐĂNG NHẬP",
+                    press: () {
+                      // Get.to(() => HomeScreen());
+                    },
+                    isActive: viewModel.activeLoginButton.value,
+                  ),
                 ),
                 SizedBox(height: 123),
                 GestureDetector(
