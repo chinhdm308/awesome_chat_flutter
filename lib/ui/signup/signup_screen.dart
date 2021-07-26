@@ -1,10 +1,10 @@
 import 'package:awesome_chat/components/custom_checkbox.dart';
 import 'package:awesome_chat/components/primary_button.dart';
-import 'package:awesome_chat/ui/signin_signup/signin_screen.dart';
+import 'package:awesome_chat/ui/signin/signin_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../colors.dart';
-import 'components/form_input.dart';
+import '../../components/form_input.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -94,7 +94,7 @@ class SignupScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => SigninScreen(),
+                        builder: (context) => SignInScreen(),
                       ),
                     );
                   },

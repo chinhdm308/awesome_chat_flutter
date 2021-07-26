@@ -13,7 +13,7 @@ class InputCommon extends StatelessWidget {
     this.textInputType = TextInputType.text,
     this.obscureText = false,
     this.controller,
-    this.errorText,
+    this.showErrorText = false,
     this.type,
   }) : super(key: key);
   final String textFieldName;
@@ -22,7 +22,7 @@ class InputCommon extends StatelessWidget {
   final TextInputType textInputType;
   final bool obscureText;
   final TextEditingController? controller;
-  final String? errorText;
+  final bool showErrorText;
   final int? type;
 
   @override

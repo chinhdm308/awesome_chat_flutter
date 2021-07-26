@@ -2,35 +2,27 @@ import 'package:awesome_chat/colors.dart';
 import 'package:awesome_chat/components/primary_button.dart';
 import 'package:awesome_chat/constants.dart';
 import 'package:awesome_chat/ui/home/home.dart';
-import 'package:awesome_chat/ui/signin_signup/signin_vewmodel.dart';
-import 'package:awesome_chat/ui/signin_signup/signup_screen.dart';
+import 'package:awesome_chat/ui/signin/signin_controller.dart';
+import 'package:awesome_chat/ui/signup/signup_screen.dart';
 import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'components/form_input.dart';
+import '../../components/form_input.dart';
 
-class SigninScreen extends StatefulWidget {
-  const SigninScreen({Key? key}) : super(key: key);
+class SignInScreen extends StatelessWidget {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController pwController = TextEditingController();
 
-  @override
-  _SigninScreenState createState() => _SigninScreenState();
-}
+  final
 
-class _SigninScreenState extends State<SigninScreen> {
-  TextEditingController emailController = TextEditingController();
-  TextEditingController pwController = TextEditingController();
-  final SigninViewModel viewModel = Get.put(SigninViewModel());
-
-  @override
-  void initState() {
-    super.initState();
+  SignInScreen() {
     emailController.addListener(() {
-      viewModel.isValidateEmail(emailController.text, pwController.text);
+
     });
     pwController.addListener(() {
-      viewModel.isValidatePassword(emailController.text, pwController.text);
+
     });
   }
 
@@ -74,7 +66,7 @@ class _SigninScreenState extends State<SigninScreen> {
                     hintText: 'yourname@gmail.com',
                     iconUri: 'assets/icons/ic_mail.svg',
                     controller: emailController,
-                    errorText: viewModel.errorEmail.value,
+                    showErrorText: viewModel.errorEmail.value,
                     type: EMAIL,
                   ),
                 ),
@@ -86,7 +78,7 @@ class _SigninScreenState extends State<SigninScreen> {
                     iconUri: 'assets/icons/ic_key.svg',
                     obscureText: true,
                     controller: pwController,
-                    errorText: viewModel.errorPw.value,
+                    showErrorText: viewModel.errorPw.value,
                     type: PASSWORD,
                   ),
                 ),
