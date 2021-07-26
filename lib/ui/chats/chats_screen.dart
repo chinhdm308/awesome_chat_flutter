@@ -1,7 +1,7 @@
 import 'package:awesome_chat/data/models/Chat.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../colors.dart';
+import '../../utils/colors.dart';
 import 'components/chat_card.dart';
 
 class ChatsScreen extends StatelessWidget {

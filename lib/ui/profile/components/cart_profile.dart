@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../colors.dart';
+import '../../../utils/colors.dart';
 
 class CardProfile extends StatelessWidget {
   const CardProfile({

@@ -1,8 +1,8 @@
-import 'package:awesome_chat/colors.dart';
-import 'package:awesome_chat/constants.dart';
+import 'package:awesome_chat/utils/colors.dart';
+import 'package:awesome_chat/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:awesome_chat/ext.dart';
+import 'package:awesome_chat/utils/ext.dart';
 
 class InputCommon extends StatelessWidget {
   const InputCommon({

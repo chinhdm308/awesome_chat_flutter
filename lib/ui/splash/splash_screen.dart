@@ -1,4 +1,4 @@
-import 'package:awesome_chat/colors.dart';
+import 'package:awesome_chat/utils/colors.dart';
 import 'package:awesome_chat/ui/signin/signin_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -10,7 +10,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Future.delayed(Duration(seconds: 1), () {
-
+      Get.offNamed('/sign_in');
     });
 
     return Scaffold(

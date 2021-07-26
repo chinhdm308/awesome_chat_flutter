@@ -2,7 +2,7 @@ import 'package:awesome_chat/ui/edit_profile/edit_profile_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../colors.dart';
+import '../../utils/colors.dart';
 import 'components/cart_profile.dart';
 import 'package:get/get.dart';
 

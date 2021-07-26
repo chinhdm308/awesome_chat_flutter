@@ -1,7 +1,7 @@
 import 'package:awesome_chat/data/models/Chat.dart';
 import 'package:flutter/material.dart';
 
-import '../../../colors.dart';
+import '../../../utils/colors.dart';
 
 class ChatCard extends StatelessWidget {
   const ChatCard({Key? key, required this.chat, required this.press})

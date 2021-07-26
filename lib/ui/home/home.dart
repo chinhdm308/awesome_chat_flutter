@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-import '../../colors.dart';
+import '../../utils/colors.dart';
 
 class HomeScreen extends StatelessWidget {
   var index = 0.obs;

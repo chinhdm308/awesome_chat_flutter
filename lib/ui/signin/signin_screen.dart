@@ -1,7 +1,6 @@
-import 'package:awesome_chat/colors.dart';
+import 'package:awesome_chat/utils/colors.dart';
 import 'package:awesome_chat/components/primary_button.dart';
-import 'package:awesome_chat/constants.dart';
-import 'package:awesome_chat/ui/home/home.dart';
+import 'package:awesome_chat/utils/constants.dart';
 import 'package:awesome_chat/ui/signin/signin_controller.dart';
 import 'package:awesome_chat/ui/signup/signup_screen.dart';
 import 'package:flutter/animation.dart';
@@ -14,15 +13,14 @@ import '../../components/form_input.dart';
 class SignInScreen extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController pwController = TextEditingController();
-
-  final
+  final SignInController _controller = Get.find();
 
   SignInScreen() {
     emailController.addListener(() {
-
+      _controller.isActiveLoginButton(emailController.text, pwController.text);
     });
     pwController.addListener(() {
-
+      _controller.isActiveLoginButton(emailController.text, pwController.text);
     });
   }
 
@@ -66,7 +64,7 @@ class SignInScreen extends StatelessWidget {
                     hintText: 'yourname@gmail.com',
                     iconUri: 'assets/icons/ic_mail.svg',
                     controller: emailController,
-                    showErrorText: viewModel.errorEmail.value,
+                    showErrorText: _controller.errorEmail.value,
                     type: EMAIL,
                   ),
                 ),
@@ -78,7 +76,7 @@ class SignInScreen extends StatelessWidget {
                     iconUri: 'assets/icons/ic_key.svg',
                     obscureText: true,
                     controller: pwController,
-                    showErrorText: viewModel.errorPw.value,
+                    showErrorText: _controller.errorPw.value,
                     type: PASSWORD,
                   ),
                 ),
@@ -97,10 +95,9 @@ class SignInScreen extends StatelessWidget {
                   () => PrimaryButton(
                     text: "ĐĂNG NHẬP",
                     press: () {
-                      // showLoaderDialog(context);
-                      Get.to(() => HomeScreen());
+                      _controller.login(emailController.text, pwController.text);
                     },
-                    isActive: viewModel.activeLoginButton.value,
+                    isActive: _controller.activeLoginButton.value,
                   ),
                 ),
                 SizedBox(height: 123),
@@ -161,23 +158,3 @@ class SignInScreen extends StatelessWidget {
     );
   }
 }
-
-showLoaderDialog(BuildContext context) {
-  AlertDialog alert = AlertDialog(
-    content: new Row(
-      children: [
-        CircularProgressIndicator(),
-        Container(margin: EdgeInsets.only(left: 7), child: Text("Loading...")),
-      ],
-    ),
-  );
-  showDialog(
-    barrierDismissible: false,
-    context: context,
-    builder: (BuildContext context) {
-      return alert;
-    },
-  );
-}
-
-dismissLoaderDialog(BuildContext context) => Navigator.pop(context);

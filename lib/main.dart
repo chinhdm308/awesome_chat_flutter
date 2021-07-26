@@ -21,8 +21,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
-      initialRoute: '/home',
+      initialRoute: '/splash',
       getPages: appPages,
     );
   }
