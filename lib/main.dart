@@ -1,5 +1,5 @@
 import 'package:awesome_chat/app_controller.dart';
-import 'package:awesome_chat/app_pages.dart';
+import 'package:awesome_chat/routes/app_pages.dart';
 import 'package:awesome_chat/ui/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
